@@ -3,8 +3,8 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { WelcomeComponent } from "./welcome/welcome.component";
-import { HomeComponent } from "./home/home.component";
+import { WelcomeComponent } from "./component/welcome/welcome.component";
+import { HomeComponent } from "./component/home/home.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,9 @@ import { HomeComponent } from "./home/home.component";
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 
 export class AppModule { }

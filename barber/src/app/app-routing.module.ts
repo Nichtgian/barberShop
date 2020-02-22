@@ -1,25 +1,26 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { WelcomeComponent } from "./welcome/welcome.component";
-import { HomeComponent } from "./home/home.component";
+import { WelcomeComponent } from "./component/welcome/welcome.component";
+import { HomeComponent } from "./component/home/home.component";
+import { RoutePaths } from "./enum/routePaths.enum";
 
 const routes: Routes = [
   {
-    path: "welcome",
+    path: RoutePaths.welcome,
     component: WelcomeComponent
   },
   {
-    path: "home",
-    redirectTo: ""
+    path: RoutePaths.home,
+    redirectTo: RoutePaths.default
   },
   {
-    path: "",
+    path: RoutePaths.default,
     component: HomeComponent
   },
   {
-    path: "**",
-    redirectTo: ""
+    path: RoutePaths.notFound,
+    redirectTo: RoutePaths.default
   }
 ];
 
