@@ -1,26 +1,24 @@
-.welcome-card-container {
+.background-container {
   height: 100%;
   display: flex;
-  background-image: url("https://www.w3schools.com/howto/img_nature.jpg");
-  background-size: cover;
+  background-image: url("src/assets/images/razor.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
   position: relative;
 }
 
-.welcome-card {
-  background-color: white;
-  color: black;
-  width: 50%;
+.welcome-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  mix-blend-mode: screen;
 }
 
 h1 {
   height: auto;
   text-align: center;
-  font-size: 8vw;
+  font-size: 40px;
   font-weight: bold;
 }
 
