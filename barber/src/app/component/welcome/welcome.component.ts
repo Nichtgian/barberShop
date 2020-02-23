@@ -18,18 +18,22 @@ export class WelcomeComponent implements OnInit {
   public constructor(private router: Router) { }
 
   public ngOnInit(): void {
-    // this.firstVisit();
+    this.redirectToHome();
   }
 
   private firstVisit(): void {
     const isFirstVisit: string = CookieService.get(Cookies.firstVisit);
     if (isFirstVisit == "false") {
-      // this.router.navigate([RoutePaths.home]);
+      this.router.navigate([RoutePaths.home]);
     }
   }
 
-  public redirectToHome(): void {
-    CookieService.set(Cookies.firstVisit, "false", Times.tenYearsInSeconds);
-    this.router.navigate([RoutePaths.home]);
+  private redirectToHome(): void {
+    this.firstVisit();
+
+    setTimeout(() => {
+      CookieService.set(Cookies.firstVisit, "false", Times.tenYearsInSeconds);
+      this.router.navigate([RoutePaths.home]);
+    }, 3000);
   }
 }
