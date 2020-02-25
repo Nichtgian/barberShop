@@ -1,4 +1,4 @@
 # Barber Shop
 
 ## Build
-ng build --prod --base-href 'https://nichtgian.github.io/barberShop/' --source-map --build-optimizer
+ng build --prod --base-href 'https://nichtgian.github.io/barberShop/build' --source-map --build-optimizer

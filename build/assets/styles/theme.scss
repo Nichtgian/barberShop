@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$barber-primary: mat-palette($mat-red);
+$barber-accent: mat-palette($mat-grey, A200, A100, A400);
+$barber-warn: mat-palette($mat-red);
+$barber-theme: mat-light-theme($barber-primary, $barber-accent, $barber-warn);
+
+@include angular-material-theme($barber-theme);

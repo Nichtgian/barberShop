@@ -6,6 +6,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatExpansionModule } from "@angular/material/expansion";
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   exports: [
     MatButtonModule,
@@ -24,7 +26,8 @@ import { MatExpansionModule } from "@angular/material/expansion";
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ]
 })
 

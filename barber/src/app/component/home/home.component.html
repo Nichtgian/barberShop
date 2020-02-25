@@ -1,27 +1,68 @@
-<mat-toolbar color="primary">
-  <img height="100%" alt="logo" [src]="'assets/images/razor.svg'" class="header-image">
-  <h1>Gian's Barber Shop</h1>
+<div class="container">
+  <mat-toolbar class="toolbar">
+    <img height="100%" alt="logo" [src]="'assets/images/icons/razor.svg'" class="toolbar-logo">
+    <h1>Gian's Barber Shop</h1>
+    <span class="spacer"></span>
+  </mat-toolbar>
 
-  <span class="spacer"></span>
-</mat-toolbar>
+  <mat-card class="content-card" style="margin-top: 100px">
+    <mat-card-header>
+      <mat-card-title>Willkommen</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Gian's Barber Shop ✂️
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-<mat-accordion [multi]="true">
-  <mat-expansion-panel [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>Willkomen</mat-panel-title>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
+  <mat-card class="content-card">
+    <mat-card-header>
+      <mat-card-title>Angebot</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Haarschnitt auf Anfrage.</p>
+      <p>Shisha im Preis inbegriffen.</p>
+      <p>Preis - gratis</p>
+    </mat-card-content>
+  </mat-card>
 
-  <mat-expansion-panel [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>Angebot</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
+  <mat-card class="content-card">
+    <mat-card-header>
+      <mat-card-title>Kontakt</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Instagram
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-  <mat-expansion-panel [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>Kontakt</mat-panel-title>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
-</mat-accordion>
+  <mat-card class="content-card" style="margin-bottom: 100px">
+    <mat-card-header>
+      <mat-card-title>Öffnungszeiten</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="businessHours" class="mat-elevation-z8">
+        <ng-container matColumnDef="day">
+          <th mat-header-cell *matHeaderCellDef>Wochentag</th>
+          <td mat-cell *matCellDef="let data">{{ data.day }}</td>
+        </ng-container>
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef>Öffnungszeiten</th>
+          <td mat-cell *matCellDef="let data">{{ data.time }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['day', 'time']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['day', 'time'];"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-toolbar class="footer">
+    <p>Copyright© 2019 Gian's Barber Shop | All rights reserved</p>
+    <span class="spacer"></span>
+    <mat-icon class="footer-icon" svgIcon="youtube" (click)="redirectToUrl(routePaths.youtube)"></mat-icon>
+    <mat-icon class="footer-icon" svgIcon="instagram" (click)="redirectToUrl(routePaths.instagram)"></mat-icon>
+  </mat-toolbar>
+</div>

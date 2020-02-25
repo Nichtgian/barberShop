@@ -34,6 +34,6 @@ export class WelcomeComponent implements OnInit {
     setTimeout(() => {
       CookieService.set(Cookies.firstVisit, "false", Times.tenYearsInSeconds);
       this.router.navigate([RoutePaths.home]);
-    }, 3000);
+    }, 5000);
   }
 }

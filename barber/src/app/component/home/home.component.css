@@ -1,15 +1,85 @@
+.container {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  width: 10000%;
+  height: 10000%;
+  top: -5000%;
+  left: -5000%;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background: url("../../../assets/images/background/infinite.svg") 0 0 repeat;
+  transform: rotate(45deg);
+  background-size: 200px;
+}
+
+.toolbar {
+  background-color: black;
+  z-index: 1;
+  color: white;
+  position: fixed;
+  top: 0
+}
+
+.toolbar h1 {
+  font-size: 40px;
+}
+
+.toolbar-logo {
+  border-radius: 50%;
+  border: black 20px solid;
+  background-color: black;
+}
+
+.toolbar-logo:hover {
+  background-color: black;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  font-size: 12px;
+  padding-left: 30px;
+}
+
+.footer-icon {
+  border-radius: 50%;
+  border: black 20px solid;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+.footer-icon:hover {
+  background-color: darkgray;
+  border-color: darkgray;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
-.header-image {
-  border-radius: 50%;
-  background-color: white;
-  padding: 12px;
-  margin: 10px;
+.content-card {
+  max-width: 1000px;
+  margin: 10px auto 0;
 }
 
-.content-card {
-  max-width: 95%;
-  margin: 10px auto 0;
+/deep/ .mat-card-header-text {
+  margin: 0 !important;
+}
+
+/deep/ .mat-elevation-z8 {
+  box-shadow: none !important;
+}
+
+
+table {
+  width: 100%;
 }
