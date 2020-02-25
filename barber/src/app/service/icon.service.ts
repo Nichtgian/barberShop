@@ -23,6 +23,7 @@ export class IconService {
   }
 
   private getFullIconPath(name: string): SafeResourceUrl {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/images/icons/${name}.svg`);
+    // Todo: fix add barberShop before build
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(`../barberShop/assets/images/icons/${name}.svg`);
   }
 }
