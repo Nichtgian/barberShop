@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-import { isDevMode } from '@angular/core';
 import { Icons } from "../enum/icons.enum";
 
 @Injectable({
@@ -24,9 +23,6 @@ export class IconService {
   }
 
   private getFullIconPath(name: string): SafeResourceUrl {
-    let dev = "";
-    if (!isDevMode())
-      dev = "barberShop/";
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(`../${dev}assets/images/icons/${name}.svg`);
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/images/icons/${name}.svg`);
   }
 }
